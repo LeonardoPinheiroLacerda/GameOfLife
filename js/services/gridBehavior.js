@@ -6,29 +6,6 @@ var toLive = [];
 
 var interval = null;
 
-function playPause(){
-    const BTN = document.querySelector("#play-btn");
-    const PLAY = document.querySelector("#play");
-    const PAUSE = document.querySelector("#pause");
-    if(interval == null){
-        interval = setInterval(next, 500);
-        PLAY.classList.add("d-none");
-        PAUSE.classList.remove("d-none");
-    }else{
-        clearInterval(interval);
-        interval = null;
-        PLAY.classList.remove("d-none");
-        PAUSE.classList.add("d-none");
-    }
-
-}
-
-function next(){
-    preCycle();
-    cycle();
-    update();
-}
-
 function preCycle(){
     const ROWS = cells.length;
     for(let i = 0; i < ROWS; i ++){

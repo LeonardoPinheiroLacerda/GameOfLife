@@ -1,9 +1,6 @@
 var cells;
 
-function createCells(items){
-    const ROWS = items;
-    const COLUMNS = items;
-    
+function createCells(COLUMNS, ROWS){  
     cells = [];
     cells.length = ROWS;
 
@@ -17,11 +14,15 @@ function createCells(items){
 
     }
 
+    console.log(cells);
+
 }
 
 function update(){
-    for(let i = 0; i < cells.length; i ++){
-        for(let j = 0; j < cells[i].length; j ++){
+    const ROWS = cells.length;
+    for(let i = 0; i < ROWS; i ++){
+        const COLUMNS = cells[i].length
+        for(let j = 0; j < COLUMNS; j ++){
 
             const ID = `${i}-${j}`;
 

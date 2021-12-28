@@ -33,7 +33,7 @@ body{
     border: 1px solid var(--borders-color);
     display: grid;
     gap: 0px 0px;
-    grid-template-columns: repeat(var(--cells-columns-rows), auto);
+    grid-template-columns: repeat(var(--cells-columns), auto);
 }
 
 .grid-container:active{

@@ -1,7 +1,5 @@
-function construct(cells){
+function construct(COLUMNS, ROWS){
     const GRID = document.querySelector('.grid-container');
-    const ROWS = cells;
-    const COLUMNS = cells;
 
     for(let i = 0; i < ROWS; i ++){
         for(let j = 0; j < COLUMNS; j ++){

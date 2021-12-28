@@ -2,10 +2,15 @@
     --body-background:#3F3F3F;
     --cell-background:#1E1E1E;
     --cell-hover-background:#3d3d3d;
+    --cell-shadow-1:#fff4b5;
+    --cell-shadow-2:#fffadb;
+    --cell-shadow-3:#FFFFFF;
     --borders-color: #3F3F3F;
     --active-cell: #FFD700;
     --active-cell-hover: #fff4b5;
     --grid-shadow: #FFD700;
+    --scroll-color: #979797;
+    --scroll-color-hover: #707070;
     --cell-size: 20px;
 }
 
@@ -53,9 +58,9 @@ body{
     border-color: var(--active-cell-hover);
     z-index: 2;
     box-shadow: 
-        0px 0px 6px var(--active-cell-hover),
-        0px 0px 12px #fffadb,
-        0px 0px 16px white;
+        0px 0px 6px  var(--cell-shadow-1),
+        0px 0px 12px var(--cell-shadow-2),
+        0px 0px 16px var(--cell-shadow-3);
 }
 
 .cell.active:hover{
@@ -72,19 +77,19 @@ body{
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: var(--body-background); 
     border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: var(--scroll-color); 
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: var(--scroll-color-hover); 
 }
 
 /* Corner */

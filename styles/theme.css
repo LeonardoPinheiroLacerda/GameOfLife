@@ -95,3 +95,14 @@ body{
 ::-webkit-scrollbar-corner{
     display: none;
 }
+
+/* Tools */
+
+#tools{
+    transition: .5s;
+}
+
+#tools button svg{
+    width: 40px;
+    height: 40px;
+}

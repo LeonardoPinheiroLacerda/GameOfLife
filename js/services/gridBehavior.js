@@ -8,15 +8,17 @@ var interval = null;
 
 function playPause(){
     const BTN = document.querySelector("#play-btn");
+    const PLAY = document.querySelector("#play");
+    const PAUSE = document.querySelector("#pause");
     if(interval == null){
-        interval = setInterval(() => {
-            next();
-        }, 500);
-        BTN.innerHTML = "Pause";
+        interval = setInterval(next, 500);
+        PLAY.classList.add("d-none");
+        PAUSE.classList.remove("d-none");
     }else{
         clearInterval(interval);
         interval = null;
-        BTN.innerHTML = "Play";
+        PLAY.classList.remove("d-none");
+        PAUSE.classList.add("d-none");
     }
 
 }

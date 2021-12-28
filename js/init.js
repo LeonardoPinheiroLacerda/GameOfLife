@@ -18,4 +18,9 @@ function init(){
     
     CONTAINER.scrollTop = (CONTAINER.scrollHeight - document.body.offsetHeight) / 2;
     CONTAINER.scrollLeft = (CONTAINER.scrollWidth - document.body.offsetWidth) / 2;
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
 }

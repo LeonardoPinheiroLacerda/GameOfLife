@@ -2,13 +2,9 @@
     --body-background:#3F3F3F;
     --cell-background:#1E1E1E;
     --cell-hover-background:#3d3d3d;
-    --cell-shadow-1:#fff4b5;
-    --cell-shadow-2:#fffadb;
-    --cell-shadow-3:#FFFFFF;
     --borders-color: #3F3F3F;
-    --active-cell: #FFD700;
-    --active-cell-hover: #fff4b5;
-    --grid-shadow: #FFD700;
+    --active-cell: #0d6efd;
+    --active-cell-hover: #6aa5ff;
     --scroll-color: #979797;
     --scroll-color-hover: #707070;
 }
@@ -56,10 +52,6 @@ body{
     background-color: var(--active-cell);
     border-color: var(--active-cell-hover);
     z-index: 2;
-    box-shadow: 
-        0px 0px 6px  var(--cell-shadow-1),
-        0px 0px 12px var(--cell-shadow-2),
-        0px 0px 16px var(--cell-shadow-3);
 }
 
 .cell.active:hover{

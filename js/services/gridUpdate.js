@@ -11,11 +11,7 @@ function createCells(COLUMNS, ROWS){
         for(let j = 0; j < COLUMNS; j ++){
             cells[i][j] = new Cell(i + ":" + j);
         }
-
     }
-
-    console.log(cells);
-
 }
 
 function update(){

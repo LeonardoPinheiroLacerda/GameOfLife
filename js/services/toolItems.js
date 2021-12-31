@@ -3,6 +3,11 @@ const TOOLS = document.querySelector('#tools');
 
 var fadeOut;
 
+const velocities = [500, 400, 300, 200, 100];
+var actualVelocity = 3;
+
+
+
 BODY.addEventListener('mousemove', () => {
     TOOLS.classList.remove('opacity-0');
     clearTimeout(fadeOut);
@@ -15,7 +20,7 @@ function playPause() {
     const PLAY = document.querySelector("#play");
     const PAUSE = document.querySelector("#pause");
     if (interval == null) {
-        interval = setInterval(next, 500);
+        interval = setInterval(next, velocities[actualVelocity]);
         PLAY.classList.add("d-none");
         PAUSE.classList.remove("d-none");
     } else {
@@ -75,3 +80,32 @@ function fullScreen() {
         LEAVE.classList.add("d-none");
     }
 }
+
+function slower(){
+    if(actualVelocity > 0) actualVelocity --;
+    updateVelocity();   
+}
+
+function faster(){
+    if(actualVelocity < velocities.length - 1) actualVelocity ++;
+    updateVelocity();
+}
+
+function updateVelocity(){
+    if (interval != null) {
+        clearInterval(interval);
+        interval = setInterval(next, velocities[actualVelocity]); 
+    }
+    showAlert();
+}
+
+function showAlert(){
+    const TOASTS = document.querySelector('#toasts');
+    const BODY = document.querySelector('#toast-body');
+
+    BODY.innerHTML = "Every generation will last <b>" + velocities[actualVelocity] + " ms</b> when using the play option.";
+    
+    var toast = new bootstrap.Toast(TOASTS);
+    toast.show();
+}
+

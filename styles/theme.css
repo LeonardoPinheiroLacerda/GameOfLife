@@ -116,7 +116,8 @@ body{
     height: 38px !important;
 }
 
-#btn-rules svg{
+#btn-rules svg, #btn-forward svg, #btn-backward svg{
     width: 35px !important;
     height: 35px !important;
 }
+

@@ -115,3 +115,14 @@ body{
     width: 35px !important;
     height: 35px !important;
 }
+
+/* Info */
+
+#info-painel{
+    min-width: 170px;
+    transition: .3s;
+}
+
+#info-painel:hover{
+    opacity: 1 !important;
+}

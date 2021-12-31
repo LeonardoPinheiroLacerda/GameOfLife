@@ -52,6 +52,8 @@ function reset() {
     //Reseta variaveis
     generation = 0;
     population = 0;
+
+    updateInfo();
 }
 
 function fullScreen() {

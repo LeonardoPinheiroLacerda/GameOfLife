@@ -22,7 +22,13 @@ function cell(x, y){
         const X = INDEXS[0];
         const Y = INDEXS[1];
 
-        cells[X][Y].toggle();
+        if(cells[X][Y].state){
+            cells[X][Y].off();
+            population -= 1;
+        }else{
+            cells[X][Y].on();
+            population += 1;
+        }
 
         update();
     });

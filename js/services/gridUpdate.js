@@ -30,4 +30,13 @@ function update(){
 
         }
     }
+    updateInfo();
+}
+
+function updateInfo(){
+    const POPULATION = document.querySelector('#population');
+    const GENERATION = document.querySelector('#generation');
+
+    POPULATION.innerHTML = population;
+    GENERATION.innerHTML = generation;
 }

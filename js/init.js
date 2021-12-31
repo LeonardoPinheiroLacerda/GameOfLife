@@ -14,10 +14,7 @@ function init(){
     construct(COLUMNS, ROWS);
     createCells(COLUMNS, ROWS);
 
-    const CONTAINER = document.querySelector('.grid-container');
-    
-    CONTAINER.scrollTop = (CONTAINER.scrollHeight - document.body.offsetHeight) / 2;
-    CONTAINER.scrollLeft = (CONTAINER.scrollWidth - document.body.offsetWidth) / 2;
+    centerScroll();
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -27,4 +24,11 @@ function init(){
     $('[data-bs-toggle="tooltip"]').on('click', function () {
         $(this).tooltip('hide')
     });
+}
+
+function centerScroll(){
+    const CONTAINER = document.querySelector('.grid-container');
+    
+    CONTAINER.scrollTop = (CONTAINER.scrollHeight - document.body.offsetHeight) / 2;
+    CONTAINER.scrollLeft = (CONTAINER.scrollWidth - document.body.offsetWidth) / 2;
 }

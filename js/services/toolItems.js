@@ -6,7 +6,8 @@ var fadeOut;
 const velocities = [500, 400, 300, 200, 100];
 var actualVelocity = 3;
 
-
+const zoom = [20, 30, 40];
+var actualZoom = 1;
 
 BODY.addEventListener('mousemove', () => {
     TOOLS.classList.remove('opacity-0');
@@ -109,3 +110,19 @@ function showAlert(){
     toast.show();
 }
 
+function zoomin(){
+    if(actualZoom < zoom.length -1) actualZoom ++;
+    applyZoom();
+}
+
+function zoomout(){
+    if(actualZoom > 0) actualZoom --;
+    applyZoom();
+}
+
+function applyZoom(){
+    const HTML = document.querySelector('html'); 
+    HTML.style.setProperty('--cell-size', zoom[actualZoom] + "px");
+
+    centerScroll();
+}

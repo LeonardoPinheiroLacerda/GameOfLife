@@ -106,18 +106,12 @@ body{
     height: 40px;
 }
 
-#btn-full-screen svg{
+#btn-full-screen svg, #btn-zoomin svg, #btn-zoomout svg{
     width: 31px !important;
     height: 31px !important;
 }
 
-#btn-reset svg{
-    width: 38px !important;
-    height: 38px !important;
-}
-
-#btn-rules svg, #btn-forward svg, #btn-backward svg{
+#btn-rules svg, #btn-forward svg, #btn-backward svg, #btn-reset svg{
     width: 35px !important;
     height: 35px !important;
 }
-

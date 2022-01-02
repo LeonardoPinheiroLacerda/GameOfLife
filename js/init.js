@@ -21,19 +21,29 @@ function init(){
 
         const tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
 
-        tooltipTriggerEl.addEventListener('shown.bs.tooltip', function () {
+        var flag = false;
+        const hide = () => {
+            flag = true;
             setTimeout(() => {
-                tooltip.hide();
+                if(flag){
+                    tooltip.hide();
+                }
             }, 2000);
+        };
+
+        tooltipTriggerEl.addEventListener('shown.bs.tooltip', hide);
+
+        tooltipTriggerEl.addEventListener('mousemove', () => {
+            tooltip.show();
+            flag = false;
+            tooltipTriggerEl.removeEventListener('shown.bs.tooltip', hide);
+            tooltipTriggerEl.addEventListener('shown.bs.tooltip', hide);
         });
 
         return tooltip;
         
     });
 
-    $('[data-bs-toggle="tooltip"]').on('click', function () {
-        $(this).tooltip('hide')
-    });
 }
 
 function centerScroll(){

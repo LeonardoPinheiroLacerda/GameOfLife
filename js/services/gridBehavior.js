@@ -15,17 +15,21 @@ function preCycle(){
         const COLUMNS = cells[i].length;
 
         for(let j = 0; j < COLUMNS; j ++){
-
-            const NEIGHBOURS = findNeighbours(i, j);
-
-            const ALIVE = cells[i][j].state;
-
-            if(ALIVE && NEIGHBOURS < 2 || ALIVE && NEIGHBOURS > 3){
-                toDie.push(cells[i][j]);
-            }else if(!ALIVE && NEIGHBOURS == 3){
-                toLive.push(cells[i][j]);
-            }
+            process(i, j);
         }
+    }
+
+}
+
+async function process(x, y){
+    const NEIGHBOURS = findNeighbours(x, y);
+
+    const ALIVE = cells[x][y].state;
+
+    if(ALIVE && NEIGHBOURS < 2 || ALIVE && NEIGHBOURS > 3){
+        toDie.push(cells[x][y]);
+    }else if(!ALIVE && NEIGHBOURS == 3){
+        toLive.push(cells[x][y]);
     }
 }
 
@@ -54,11 +58,8 @@ function findNeighbours(x, y){
 
 function isAlive(x, y){
     try{
-        if(cells[x][y].state){
-            return 1;
-        }
+        return 0 + cells[x][y].state;        
     }catch(e){
-       
+       return 0;
     }
-    return 0;
 }

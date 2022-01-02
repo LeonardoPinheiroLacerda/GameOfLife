@@ -15,25 +15,29 @@ function createCells(COLUMNS, ROWS){
 }
 
 function update(){
+
     population = 0;
-    
     const ROWS = cells.length;
     for(let i = 0; i < ROWS; i ++){
         const COLUMNS = cells[i].length
         for(let j = 0; j < COLUMNS; j ++){
 
-            const ID = `${i}-${j}`;
-
-            if(cells[i][j].state == true){
-                document.getElementById(ID).classList.add('active');
-                population += 1;
-            }else{
-                document.getElementById(ID).classList.remove('active');
-            }
+            updateCells(i, j);
 
         }
     }
     updateInfo();
+}
+
+async function updateCells(x, y){
+    const ID = `${x}-${y}`;
+
+    if(cells[x][y].state == true){
+        document.getElementById(ID).classList.add('active');
+        population += 1;
+    }else{
+        document.getElementById(ID).classList.remove('active');
+    }
 }
 
 function updateInfo(){

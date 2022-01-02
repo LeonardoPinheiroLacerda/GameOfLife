@@ -18,7 +18,17 @@ function init(){
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+
+        const tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
+
+        tooltipTriggerEl.addEventListener('shown.bs.tooltip', function () {
+            setTimeout(() => {
+                tooltip.hide();
+            }, 2000);
+        });
+
+        return tooltip;
+        
     });
 
     $('[data-bs-toggle="tooltip"]').on('click', function () {

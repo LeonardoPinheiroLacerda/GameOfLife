@@ -121,6 +121,7 @@ body{
 #info-painel{
     min-width: 170px;
     transition: .3s;
+    z-index: 10;
 }
 
 #info-painel:hover{

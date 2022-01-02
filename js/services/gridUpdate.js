@@ -15,6 +15,8 @@ function createCells(COLUMNS, ROWS){
 }
 
 function update(){
+    population = 0;
+    
     const ROWS = cells.length;
     for(let i = 0; i < ROWS; i ++){
         const COLUMNS = cells[i].length
@@ -24,6 +26,7 @@ function update(){
 
             if(cells[i][j].state == true){
                 document.getElementById(ID).classList.add('active');
+                population += 1;
             }else{
                 document.getElementById(ID).classList.remove('active');
             }

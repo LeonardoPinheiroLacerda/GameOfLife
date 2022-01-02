@@ -8,7 +8,6 @@ var interval = null;
 
 function preCycle(){
     generation += 1;
-    population = 0;
 
     const ROWS = cells.length;
     for(let i = 0; i < ROWS; i ++){
@@ -20,8 +19,6 @@ function preCycle(){
             const NEIGHBOURS = findNeighbours(i, j);
 
             const ALIVE = cells[i][j].state;
-
-            population = ALIVE ? population += 1 : population;
 
             if(ALIVE && NEIGHBOURS < 2 || ALIVE && NEIGHBOURS > 3){
                 toDie.push(cells[i][j]);

@@ -6,7 +6,7 @@
 
 > If you want to have a 10x20 grid use the following link <https://leonardopinheirolacerda.github.io/GameOfLife?rows=10&columns=20>.
  
-> **WARNING:** Feel free to play with it, but be aware that if you use a really large grid the application will get very slow depending on your computer.
+> **WARNING:** Feel free to play with it, but be aware that if you use a really large grid the application will get really slow depending on your computer.
 
 ### What is it?
 
